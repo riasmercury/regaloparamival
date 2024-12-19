@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón y Girasoles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #fce4ec;
+            font-family: 'Century', serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .text {
+            max-width: 280px;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+            text-align: justify;
+            margin: 10px;
+        }
+
+        /* Contenedor para el corazón y el texto */
+        .heart-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px; /* Espacio suficiente debajo del corazón */
+        }
+
+        /* Corazón */
+        .heart {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            background-color: red;
+            transform: rotate(-45deg);
+            margin-bottom: 20px; /* Espacio suficiente debajo */
+            z-index: 1; /* Asegura que el corazón esté por debajo del texto */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -90px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 90px;
+        }
+
+        .heart-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.4;
+            z-index: 2; /* Asegura que el texto esté encima del corazón */
+        }
+
+        /* Girasol */
+        .sunflower {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: yellow;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sunflower::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: brown;
+            border-radius: 50%;
+        }
+
+        .petal {
+            position: absolute;
+            width: 15px;
+            height: 8px;
+            background: yellow;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .petal:nth-child(1) { transform: rotate(0deg) translate(30px); }
+        .petal:nth-child(2) { transform: rotate(45deg) translate(30px); }
+        .petal:nth-child(3) { transform: rotate(90deg) translate(30px); }
+        .petal:nth-child(4) { transform: rotate(135deg) translate(30px); }
+        .petal:nth-child(5) { transform: rotate(180deg) translate(30px); }
+        .petal:nth-child(6) { transform: rotate(225deg) translate(30px); }
+        .petal:nth-child(7) { transform: rotate(270deg) translate(30px); }
+        .petal:nth-child(8) { transform: rotate(315deg) translate(30px); }
+
+        .flower-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .gif {
+            margin-top: 30px;
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .heart {
+                width: 140px;
+                height: 140px;
+            }
+
+            .heart::before,
+            .heart::after {
+                width: 140px;
+                height: 140px;
+            }
+
+            .heart::before {
+                top: -70px;
+            }
+
+            .heart::after {
+                left: 70px;
+            }
+
+            .heart-text {
+                font-size: 14px;
+            }
+
+            .sunflower {
+                width: 50px;
+                height: 50px;
+            }
+
+            .sunflower::before {
+                width: 25px;
+                height: 25px;
+            }
+
+            .gif {
+                width: 80px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .text {
+                font-size: 20px;
+                max-width: 350px;
+            }
+
+            .heart {
+                width: 200px;
+                height: 200px;
+            }
+
+            .heart-text {
+                font-size: 18px;
+            }
+
+            .sunflower {
+                width: 70px;
+                height: 70px;
+            }
+
+            .gif {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <p>Cada día que paso a tu lado me doy cuenta de lo afortunada que soy por tenerte en mi vida. Me importas tanto, más de lo que las palabras pueden expresar.</p>
+            <div class="flower-row">
+                <div class="sunflower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                </div>
+            </div>
+        </div>
+        <div class="heart-container">
+            <div class="heart">
+                <div class="heart-text">Val,<br>Te amo</div>
+            </div>
+        </div>
+        <div class="text">
+            <p>Quiero que sepas que siempre estaré aquí para ti, apoyándote y amándote más de lo que imaginas. Eres lo mejor que me ha pasado, y me haces sentir la persona más feliz del mundo.</p>
+            <div class="flower-row">
+                <div class="sunflower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="oso.gif" alt="GIF de oso" class="gif">
+</body>
+</html>
